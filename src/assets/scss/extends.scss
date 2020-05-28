@@ -1,0 +1,62 @@
+%flex {
+  display: flex;
+}
+
+%flex-items-start {
+  @extend %flex;
+  align-items: flex-start;
+}
+
+%flex-items-center {
+  @extend %flex;
+  align-items: center;
+}
+
+%flex-justify-center {
+  @extend %flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-justify-start {
+  @extend %flex;
+  justify-content: flex-start;
+}
+
+%flex-justify-between {
+  @extend %flex;
+  justify-content: space-between;
+}
+
+%flex-justify-start-between {
+  @extend %flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+%flex-justify-center-between {
+  @extend %flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+%flex-justify-center-end {
+  @extend %flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+%pfm {
+  font-family: PingFangSC-Medium;
+  font-weight: bold;
+}
+
+%pfr {
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+%pfs {
+  font-family: PingFangSC-Semibold;
+  font-weight: bolder;
+}

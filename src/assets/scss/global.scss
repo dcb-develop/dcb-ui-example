@@ -1,0 +1,40 @@
+@import "extends";
+@import "variable";
+@import "normalize";
+@import "mixins";
+
+// 页面整体左右边距
+.wrapper {
+  padding: 10px 16px 40px;
+  height: 100%;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+// 页面顶部标题
+.page-name {
+  color: rgba(70, 81, 102, 1);
+  font-size: 26px;
+  margin-bottom: 16px;
+}
+
+.el-shadow {
+  background-color: #fff;
+  box-shadow: 0 4px 17px 0 rgba(89, 113, 139, 0.18);
+  border-radius: 12px;
+}
+
+.submit-btn {
+  border-radius: 50px;
+  background-color: rgba(255, 168, 9, 1);
+  color: #ffffff;
+  display: block;
+  font-size: 20px;
+  height: 44px;
+  line-height: 44px;
+  margin: 0 auto;
+  width: 299px;
+}
+
