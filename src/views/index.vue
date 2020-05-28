@@ -38,16 +38,16 @@ export default {
         {
           title: '消息滚动',
           url: 'seamless'
+        },
+        {
+          title: '抽奖',
+          url: 'luck-draw'
         }
       ]
     }
   },
 
-  mounted () {
-    this.$jsonp('https://trip-coupon.oss-cn-chengdu.aliyuncs.com/javascript/demo.js', {callbackQuery: 'cb', callbackName: 'jsonpFunc'}).then(res => {
-      console.log(res)
-    })
-  },
+  mounted () {},
 
   methods: {}
 }

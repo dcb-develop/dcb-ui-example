@@ -21,12 +21,8 @@
     "js-md5": "^0.7.3",
     "jsencrypt": "^3.0.0-rc.1",
     "lib-flexible": "^0.3.2",
-    "postcss-px2rem": "^0.3.0",
-    "vant": "^2.6.3",
     "vue": "^2.5.2",
-    "vue-jsonp": "^0.1.8",
     "vue-navigation": "^1.1.4",
-    "vue-pdf": "^4.0.7",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
@@ -64,6 +60,7 @@
     "portfinder": "^1.0.13",
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
+    "postcss-px2rem": "^0.3.0",
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.1.0",

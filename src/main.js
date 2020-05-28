@@ -10,12 +10,10 @@ import '@/assets/font/iconfont.css'
 import toast from '@/components/toast'
 import dialog from '@/components/dialog'
 import load from '@/components/loading'
-import VueJsonp from 'vue-jsonp'
 
-Vue.use(Navigation, {router})
+Vue.use(Navigation, {router, keyName: 'vnk'})
   .use(dialog)
   .use(toast)
-  .use(VueJsonp)
   .use(load);
 
 Vue.prototype.$http = ajax

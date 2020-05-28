@@ -13,6 +13,7 @@ const ImageClip = resolve => require(['@/views/ImageClip'], resolve)
 const Call = resolve => require(['@/views/Call'], resolve)
 const SocialShare = resolve => require(['@/views/SocialShare'], resolve)
 const Seamless = resolve => require(['@/views/Seamless'], resolve)
+const LuckDraw = resolve => require(['@/views/LuckDraw'], resolve)
 
 let routes = [
   {
@@ -70,6 +71,11 @@ let routes = [
     path: '/view/seamless',
     name: 'seamless',
     component: Seamless
+  },
+  {
+    path: '/view/luck-draw',
+    name: 'luck-draw',
+    component: LuckDraw
   }
 ]
 
