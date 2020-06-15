@@ -41,6 +41,12 @@
           v-model.trim="formData.phone"
           @input="onBlur('phone', $event)"/>
       </form-item>
+      <form-item label="投诉内容" prop="content">
+        <text-area class="mih173 mb20" placeholder="描述您发现的污染现象…" :max-count="100" @input="onInput"/>
+      </form-item>
+      <form-item label="上传照片补充说明" prop="content">
+        <uploader class="upload-wrapper" :maxlength="3" :multiple="false" action="/api/upload/image" @fetch="onFetch" @remove="onRemove"/>
+      </form-item>
     </v-form>
 
     <button type="button" class="submit-btn" @click="onSubmit('form')">提交</button>
@@ -50,13 +56,17 @@
 <script>
   import VForm from '@/components/Form'
   import FormItem from '@/components/Form/FormItem'
+  import TextArea from '@/components/TextArea'
+  import Uploader from '@/components/Uploader'
 
   export default {
     name: 'Form',
 
     components: {
       VForm,
-      FormItem
+      FormItem,
+      TextArea,
+      Uploader
     },
 
     data() {
@@ -66,7 +76,9 @@
           name: '',
           phone: '',
           purpose: '',
-          unitName: ''
+          unitName: '',
+          content: '',
+          images: []
         },
         rules: {
           name: {
@@ -127,6 +139,18 @@
         if (e.target.value.length) {
           this.rules[prop].show = false;
         }
+      },
+
+      onInput(message) {
+        this.formData.content = message;
+      },
+
+      onFetch(imageUrl) {
+        this.formData.images.push(imageUrl);
+      },
+
+      onRemove(index) {
+        this.formData.images.splice(index, 1);
       },
 
       onSubmit (form) {
