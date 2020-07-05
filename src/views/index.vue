@@ -42,6 +42,10 @@ export default {
         {
           title: '抽奖',
           url: 'luck-draw'
+        },
+        {
+          title: '地址',
+          url: 'address-list'
         }
       ]
     }

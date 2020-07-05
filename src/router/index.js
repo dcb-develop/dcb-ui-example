@@ -14,6 +14,7 @@ const Call = resolve => require(['@/views/Call'], resolve)
 const SocialShare = resolve => require(['@/views/SocialShare'], resolve)
 const Seamless = resolve => require(['@/views/Seamless'], resolve)
 const LuckDraw = resolve => require(['@/views/LuckDraw'], resolve)
+const AddressList = resolve => require(['@/views/AddressList'], resolve)
 
 let routes = [
   {
@@ -76,6 +77,11 @@ let routes = [
     path: '/view/luck-draw',
     name: 'luck-draw',
     component: LuckDraw
+  },
+  {
+    path: '/view/address-list',
+    name: 'address-list',
+    component: AddressList
   }
 ]
 
