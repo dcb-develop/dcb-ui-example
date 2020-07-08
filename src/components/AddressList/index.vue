@@ -14,9 +14,15 @@
 
           <!--显示选中数据-->
           <div class="area-top  border-a">
-            <div class="area-province area-top-item" :class="{'area-top-active': 1 === areaStatus}" @click="selectArea(1)">{{checkArea.province}}</div>
-            <div class="area-city area-top-item" :class="{'area-top-active': 2 === areaStatus}" @click="selectArea(2)">{{checkArea.city}}</div>
-            <div class="area-region area-top-item" :class="{'area-top-active': 3 === areaStatus}" @click="selectArea(3)">{{checkArea.region}}</div>
+            <div class="area-province area-top-item" :class="{'area-top-active': 1 === areaStatus}"
+                 @click="selectArea(1)">{{checkArea.province}}
+            </div>
+            <div class="area-city area-top-item" :class="{'area-top-active': 2 === areaStatus}" @click="selectArea(2)">
+              {{checkArea.city}}
+            </div>
+            <div class="area-region area-top-item" :class="{'area-top-active': 3 === areaStatus}"
+                 @click="selectArea(3)">{{checkArea.region}}
+            </div>
           </div>
 
           <!--地区列表-->
@@ -25,14 +31,16 @@
               <li class="area-data-item" v-for="(item, key, index) in areaList" @click="checkProvOne(key, item)"
                   :class="{red: key === checkProvince}" :key="index">
                 <span class="area-text">{{item.name}}</span>
-                <i class="icon-check iconfont" style="margin-left: 0.1rem" :class="{'toggle-visible': key !== checkProvince}"></i>
+                <i class="icon-check iconfont" style="margin-left: 0.1rem"
+                   :class="{'toggle-visible': key !== checkProvince}"></i>
               </li>
             </ul>
             <ul class="area-data" :class="{'toggle-visible': 2 !== areaStatus}" v-if="areaList[checkProvince]">
               <li class="area-data-item" v-for="(item, key, index) in areaList[checkProvince].child"
                   @click="checkCityOne(key, item.name, checkProvince)" :class="{red: key === checkCity}" :key="index">
                 <span class="area-text">{{item.name}}</span>
-                <i class="icon-check iconfont" style="margin-left: 0.1rem" :class="{'toggle-visible': key !== checkCity}"></i>
+                <i class="icon-check iconfont" style="margin-left: 0.1rem"
+                   :class="{'toggle-visible': key !== checkCity}"></i>
               </li>
             </ul>
             <ul class="area-data" :class="{'toggle-visible': 3 !== areaStatus}"
@@ -40,7 +48,8 @@
               <li class="area-data-item" v-for="(item, key, index) in areaList[checkProvince].child[checkCity].child"
                   @click="checkRegionOne(key, item.name)" :class="{red: key === checkRegion}" :key="index">
                 <span class="area-text">{{item.name}}</span>
-                <i class="icon-check iconfont" style="margin-left: 0.1rem" :class="{'toggle-visible': key !== checkRegion}"></i>
+                <i class="icon-check iconfont" style="margin-left: 0.1rem"
+                   :class="{'toggle-visible': key !== checkRegion}"></i>
               </li>
             </ul>
           </div>
@@ -73,18 +82,18 @@
     },
 
     watch: {
-      value (newVal) {
+      value(newVal) {
         this.show = newVal;
       },
 
-      show () {
+      show() {
         this.$emit('input', this.show);
       }
     },
 
     methods: {
       // 取消
-      onCancel () {
+      onCancel() {
         this.show = false;
       },
 

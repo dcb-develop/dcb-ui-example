@@ -15,14 +15,16 @@
 
 // 页面顶部标题
 .page-name {
+  align-items: center;
   color: rgba(70, 81, 102, 1);
+  display: flex;
   font-size: 26px;
-  margin-bottom: 16px;
+  padding: 0 16px;
 }
 
 .el-shadow {
   background-color: #fff;
-  box-shadow: 0 4px 17px 0 rgba(89, 113, 139, 0.18);
+  box-shadow: 0 4px 18px 0 rgba(52, 81, 102, 0.16);
   border-radius: 12px;
 }
 

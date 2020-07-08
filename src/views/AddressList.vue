@@ -1,33 +1,37 @@
 <template>
-  <div class="wrapper">
-    <div class="address" :class="{placeholder: !address}" @click="setAddress">{{address || '选择地址'}}</div>
-
+  <main>
+    <component :is="currentModel" @set="addAddress"/>
     <area-select :area-list="areaList" v-model="show" @update="onUpdate"/>
-  </div>
+  </main>
 </template>
 
 <script>
   import AreaSelect from '@/components/AddressList'
+  import Edit from '@/components/AddressList/Edit'
+  import List from '@/components/AddressList/List'
   import {areaList} from '@/assets/js/areaList'
 
   export default {
     name: 'AddressList',
 
     components: {
-      AreaSelect
+      AreaSelect,
+      Edit,
+      List
     },
 
     data () {
       return {
         areaList, // 地址数据
+        currentModel: 'List', // 当前显示组件
         show: false, // 控制地址选择器显示
         address: '' // 更新选择之后的地址
       }
     },
 
     methods: {
-      setAddress () { // 更改显示状态
-        this.show = !this.show;
+      addAddress () {
+        this.currentModel = 'Edit';
       },
 
       onUpdate (address) {
@@ -41,18 +45,14 @@
   @import "~style/variable";
   @import "~style/extends";
 
-  .address {
-    border-radius: 8px;
-    border: 1px solid $border-color;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    font-size: $fz16;
-    color: $color1;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
   }
 
-  .placeholder {
-    color: $placeholder-color;
+  main {
+    height: 100%;
   }
 
   .none {
